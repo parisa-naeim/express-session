@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Users</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+    <nav>
+        <% if (user) { %>
+            <a href="/auth/sign-out">Sign out</a>
+        <% } else { %>
+            <a href="/auth/sign-up">Sign up</a>
+            |
+            <a href="/auth/sign-in">Sign in</a>
+        <% } %>
+    </nav>
+
+    <h1>Welcome, <%= user ? user.username : 'guest' %></h1>
+
+    <p>
+        <a href="/vip-lounge">Get into the VIP Users Only lounge</a>
+    </p>
+
+</body>
+</html>
